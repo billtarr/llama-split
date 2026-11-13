@@ -1,0 +1,13 @@
+# Everything here is read by Linux/Android tooling (sh on the device, clang in the container).
+# Git's Windows default (core.autocrlf=true) would rewrite these to CRLF on checkout, and a
+# CRLF shell script pushed to the device fails with "\r: not found". Pin LF for all text.
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.py   text eol=lf
+*.c    text eol=lf
+*.h    text eol=lf
+*.cpp  text eol=lf
+*.md   text eol=lf
+
+*.so   binary

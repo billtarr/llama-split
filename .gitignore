@@ -1,0 +1,26 @@
+# This repo commits a few binaries on purpose: `./llama-split`, `./stage_pass.so` and `lib/*.so`.
+# Together they are what makes a fresh clone pushable to a phone and runnable without building
+# anything. `lib/*.so` especially cannot be rebuilt here (it needs a full llama.cpp build in a
+# container, ~40 min), so losing it means re-pulling from a working device.
+#
+# They are still artifacts: `bash build.sh` / `bash build_stage.sh` regenerate the two binaries.
+# Rebuild rather than edit, and never let a stale one sit here pretending to be current.
+
+# build leftovers
+/llama-split.new
+*.o
+*.new
+
+# local run artifacts
+*.log
+*.raw
+*.bin
+*.out
+
+# python
+__pycache__/
+*.pyc
+
+# editor leftovers
+*~
+.*.un~
